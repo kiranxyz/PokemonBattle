@@ -33,11 +33,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/battle2">Battle 2</NavLink>
           </li>
-          {/* {user && (
+          {user && (
             <li>
-              <NavLink to="/create">Create post</NavLink>
+              <NavLink to="/team">Team</NavLink>
             </li>
-          )} */}
+          )}
           {loading ? null : user ? (
             <>
               <li className="pointer-events-none">

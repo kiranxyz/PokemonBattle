@@ -5,6 +5,7 @@ import Register from "./Register";
 import PokemonBattle from "./PokemonBattle";
 import PokemonDetail from "./PokemonDetail";
 import PokemonBattle2 from "./PokemonBattle2";
+import Team from "./Team";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   PokemonBattle,
   PokemonBattle2,
   PokemonDetail,
+  Team,
 };

@@ -10,6 +10,7 @@ import {
 } from "@/pages";
 import { RequireAuth, RequireNoAuth } from "@/routeGuards";
 import PokemonDetail from "./pages/PokemonDetail";
+import Team from "./pages/Team";
 
 const App = () => (
   <BrowserRouter>
@@ -27,14 +28,7 @@ const App = () => (
             </RequireNoAuth>
           }
         />
-        {/* <Route
-          path="pkdetail/:id"
-          element={
-            <RequireNoAuth>
-              <PokemonDetail />
-            </RequireNoAuth>
-          }
-        /> */}
+        {<Route path="team" element={<Team />} />}
         <Route
           path="register"
           element={
