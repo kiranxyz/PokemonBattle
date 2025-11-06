@@ -7,7 +7,8 @@ declare global {
 
   type PokemonInput = Pokemon & {
     id: string;
-    sprite: string;
+    userId: string;
+    sprites: string;
     type?: string;
     height?: number;
     weight?: number;
@@ -38,12 +39,5 @@ declare global {
     user: User | null;
     setUser: (user: User | null) => void;
     logout: () => void;
-  };
-
-  type DataContextType = {
-    loading: boolean;
-    team: Team | null;
-    setTeam: (team: Team | null) => void;
-    //logout: () => void;
   };
 }

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router";
+import { getTeam } from "@/data";
+import { useAuthContext } from "@/contexts";
 type Move = { name: string; power: number; type: string };
 type Pokemon = {
   id: number;
@@ -86,6 +88,25 @@ const ROSTER: Pokemon[] = [
 ];
 
 const Team = () => {
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [team, setTeam] = useState<PokemonInput[]>([]);
+
+  useEffect(() => {
+    const myTeam = async () => {
+      try {
+        setLoading(false);
+        const myTeam = await getTeam(user.id);
+        setTeam(myTeam);
+        setLoading(true);
+      } catch (error) {}
+    };
+    myTeam();
+  }, []);
+
+  console.log("TEAM : ", team);
+
   const [playerChoice, setPlayerChoice] = useState<Pokemon | null>(ROSTER[0]);
   return (
     <section className="justify-center align">
@@ -95,21 +116,21 @@ const Team = () => {
             My Pokémon Team
           </h2>
           <div className="space-y-3">
-            {ROSTER.map((r) => (
+            {team.map((r) => (
               <div
                 key={r.name}
-                onClick={() => setPlayerChoice(r)}
+                //onClick={() => setPlayerChoice(r)}
                 className={`flex items-center justify-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-50 border-b border-gray-300 ${
                   playerChoice?.name === r.name
                     ? "ring-3 ring-blue-300 bg-blue-50"
                     : ""
                 }`}
               >
-                <img src={r.sprite} alt={r.name} className="w-20" />
+                <img src={r.sprites} alt={r.name} className="w-20" />
                 <div>
                   <div className="font-medium">{r.name}</div>
                   <div className="text-xs text-gray-500">
-                    {r.type} • HP {r.maxHp}
+                    {r.type} • HP {r.hp}
                   </div>
                 </div>
               </div>

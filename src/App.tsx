@@ -1,13 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { RootLayout } from "@/layouts";
-import {
-  Home,
-  Login,
-  NotFound,
-  PokemonBattle,
-  Register,
-  PokemonBattle2,
-} from "@/pages";
+import { Home, Login, NotFound, Register, PokemonBattle2 } from "@/pages";
 import { RequireAuth, RequireNoAuth } from "@/routeGuards";
 import PokemonDetail from "./pages/PokemonDetail";
 import Team from "./pages/Team";
@@ -17,7 +10,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="battle" element={<PokemonBattle />} />
+        {/* <Route path="battle" element={<PokemonBattle />} /> */}
         <Route path="battle2" element={<PokemonBattle2 />} />
         <Route path="pkdetail/:id" element={<PokemonDetail />} />
         <Route
@@ -28,7 +21,7 @@ const App = () => (
             </RequireNoAuth>
           }
         />
-        {<Route path="team" element={<Team />} />}
+
         <Route
           path="register"
           element={
@@ -37,12 +30,12 @@ const App = () => (
             </RequireNoAuth>
           }
         />
-        {/* <Route path="post/:id" element={<Post />} /> */}
+
         <Route
           path="team"
           element={
             <RequireAuth>
-              <p>Add to team page required</p>
+              <Team />
             </RequireAuth>
           }
         />
