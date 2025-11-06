@@ -59,16 +59,17 @@ const PokemonCard = ({ name, url }: PokemonInput) => {
     }
   };
   return (
-    <div className=" hover:-translate-y-1 hover:scale-[1.02] card w-72 items-center justify-center bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-200"
-    style={{
-            padding: '1rem',
-            margin: '1rem',
-            flexDirection: 'column',
-            borderRadius: '40px',
-            border: '10px solid #E0BBFF',
-            boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
-          
-          }}>
+    <div
+      className=" hover:-translate-y-1 hover:scale-[1.02] card w-72 items-center justify-center bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-200"
+      style={{
+        padding: "1rem",
+        margin: "1rem",
+        flexDirection: "column",
+        borderRadius: "40px",
+        border: "10px solid #E0BBFF",
+        boxShadow: "0 8px 15px rgba(0, 0, 0, 0.3)",
+      }}
+    >
       <figure className=" from-base-200 to-base-100 h-48 flex items-center justify-center">
         {image ? (
           <img
@@ -91,49 +92,36 @@ const PokemonCard = ({ name, url }: PokemonInput) => {
           <Link
             to={`/pkdetail/${id}`}
             className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-          style={{
-            backgroundColor: '#D6AFFE',
-            height: '3rem',
-            borderColor: '#A75CF4',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
+            style={{
+              backgroundColor: "#D6AFFE",
+              height: "3rem",
+              borderColor: "#A75CF4",
+              borderRadius: "12px",
+              borderWidth: "2px",
+              boxShadow: "0 2px 2px rgba(0, 0, 0, 0.4)",
+              textShadow: "1px 1px 5px rgba(0,0,0,0.6)",
+            }}
+          >
             View details
           </Link>
 
-          <Link
-            to={url}
-            className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-          style={{
-              borderColor: '#4EC307',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            backgroundColor: '#A6F208',
-            height: '3rem',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4,)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
-            View details Url
-          </Link>
-
-          <button onClick={addToTeam} 
-          className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-          style={{
-              borderColor: '#DA57F0',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            backgroundColor: '#FDC0FF',
-            height: '3rem',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
-            Add to Team
-          </button>
+          {user && (
+            <button
+              onClick={savePokemon}
+              className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
+              style={{
+                borderColor: "#DA57F0",
+                borderRadius: "12px",
+                borderWidth: "2px",
+                backgroundColor: "#FDC0FF",
+                height: "3rem",
+                boxShadow: "0 2px 2px rgba(0, 0, 0, 0.4)",
+                textShadow: "1px 1px 5px rgba(0,0,0,0.6)",
+              }}
+            >
+              Add to Team
+            </button>
+          )}
         </div>
       </div>
     </div>
