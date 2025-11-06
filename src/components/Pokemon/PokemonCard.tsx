@@ -59,135 +59,71 @@ const PokemonCard = ({ name, url }: PokemonInput) => {
     }
   };
   return (
-<<<<<<< HEAD
     <div
-      className=" hover:-translate-y-1 hover:scale-[1.02] card w-72 items-center justify-center bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-200"
+      className=" hover:-translate-y-1 hover:scale-[1.02] card h-100 w-72 items-center justify-center bg-base-100 shadow-lg    hover:shadow-2xl transition-all duration-300 border border-base-200"
       style={{
         padding: "1rem",
         margin: "1rem",
         flexDirection: "column",
         borderRadius: "40px",
-        border: "10px solid #E0BBFF",
+        border: "5px solid #E0BBFF",
         boxShadow: "0 8px 15px rgba(0, 0, 0, 0.3)",
+        height: "23rem",
       }}
     >
-      <figure className=" from-base-200 to-base-100 h-48 flex items-center justify-center">
-=======
-    <div className=" hover:-translate-y-1 hover:scale-[1.02] card h-100 w-72 items-center justify-center bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-200"
-    style={{
-            padding: '1rem',
-            margin: '1rem',
-            flexDirection: 'column',
-            borderRadius: '40px',
-            border: '5px solid #E0BBFF',
-            boxShadow: '0 8px 15px rgba(0, 0, 0, 0.3)',
-            height: '23rem',          
-          }}>
-    
-
       <div className="card-body text-center p-4">
         <h2 className="mt-8 card-title text-purple-800 capitalize text-xl font-g font-bold text-primary justify-center">
           {name}
         </h2>
-          <figure className=" from-base-200 to-base-100 h-30 flex items-center justify-center">
->>>>>>> 1df103dbafe7e5201c042ba7b3df3fa8e5ff1a16
-        {image ? (
-          <img
-            src={image}
-            alt={name}
-            className="object-contain  h-40 w-40 transition-transform duration-300 hover:scale-110 drop-shadow-md"
-          />
-        ) : (
-          <div className="skeleton w-24 h-24"></div>
-        )}
-      </figure>
+        <figure className=" from-base-200 to-base-100 h-30 flex items-center justify-center">
+          {image ? (
+            <img
+              src={image}
+              alt={name}
+              className="object-contain  h-40 w-40 transition-transform duration-300 hover:scale-110 drop-shadow-md"
+            />
+          ) : (
+            <div className="skeleton w-24 h-24"></div>
+          )}
+        </figure>
         <h3 className="text-sm text-black">Type: {type}</h3>
 
         <div className="">
           <div className="m-3 flex flex-col gap-2">
-             <Link
-            to={`/pkdetail/${id}`}
-            className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-<<<<<<< HEAD
-            style={{
-              backgroundColor: "#D6AFFE",
-              height: "3rem",
-              borderColor: "#A75CF4",
-              borderRadius: "12px",
-              borderWidth: "2px",
-              boxShadow: "0 2px 2px rgba(0, 0, 0, 0.4)",
-              textShadow: "1px 1px 5px rgba(0,0,0,0.6)",
-            }}
-          >
-            View details
-          </Link>
-
-          {user && (
-            <button
-              onClick={savePokemon}
+            <Link
+              to={`/pkdetail/${id}`}
               className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
               style={{
-                borderColor: "#DA57F0",
+                backgroundColor: "#D6AFFE",
+                height: "3rem",
+                borderColor: "#A75CF4",
                 borderRadius: "12px",
                 borderWidth: "2px",
-                backgroundColor: "#FDC0FF",
-                height: "3rem",
                 boxShadow: "0 2px 2px rgba(0, 0, 0, 0.4)",
                 textShadow: "1px 1px 5px rgba(0,0,0,0.6)",
               }}
             >
-              Add to Team
-            </button>
-          )}
-=======
-          style={{
-            backgroundColor: '#FDC0FF',
-            height: '2.5rem',
-            borderColor: '#DA57F0',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
-            View Details
-          </Link>
+              View details
+            </Link>
 
-               <button onClick={addToTeam} 
-          className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-          style={{
-               borderColor: '#4EC307',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            backgroundColor: '#A6F208',
-            height: '2.5rem',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4,)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
-            Add to Team
-          </button>
-
+            {user && (
+              <button
+                onClick={savePokemon}
+                className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
+                style={{
+                  borderColor: "#DA57F0",
+                  borderRadius: "12px",
+                  borderWidth: "2px",
+                  backgroundColor: "#FDC0FF",
+                  height: "3rem",
+                  boxShadow: "0 2px 2px rgba(0, 0, 0, 0.4)",
+                  textShadow: "1px 1px 5px rgba(0,0,0,0.6)",
+                }}
+              >
+                Add to Team
+              </button>
+            )}
           </div>
-         
-          <Link
-            to={url}
-            className="hover:brightness-100 hover:-translate-y-1 btn w-full text-white text-lg font-bold transition-all duration-300"
-          style={{
-              borderColor: '#4EC307',
-            borderRadius: '12px',
-            borderWidth: '2px',
-            backgroundColor: '#A6F208',
-            height: '2.5rem',
-            boxShadow: '0 2px 2px rgba(0, 0, 0, 0.4,)',
-            textShadow: '1px 1px 5px rgba(0,0,0,0.6)',
-          }}
-        >
-            View details Url
-          </Link>
-
-     
->>>>>>> 1df103dbafe7e5201c042ba7b3df3fa8e5ff1a16
         </div>
       </div>
     </div>
