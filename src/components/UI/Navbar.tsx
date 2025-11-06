@@ -25,16 +25,18 @@ const Navbar = () => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/battle">Battle 1</NavLink>
-          </li>
-          <li>
-            <NavLink to="/battle2">Battle 2</NavLink>
-          </li>
+          </li> */}
           {user && (
-            <li>
-              <NavLink to="/team">Team</NavLink>
-            </li>
+            <>
+              <li>
+                <NavLink to="/battle2">Battle Ground</NavLink>
+              </li>
+              <li>
+                <NavLink to="/team">Team</NavLink>
+              </li>
+            </>
           )}
           {loading ? null : user ? (
             <>
