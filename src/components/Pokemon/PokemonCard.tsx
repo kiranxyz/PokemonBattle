@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { addToTeam } from "@/data";
+import { useAuthContext } from "@/contexts";
+import { toast } from "react-toastify";
 
-const PokemonCard = ({ name, url }: Pokemon) => {
+const PokemonCard = ({ name, url }: PokemonInput) => {
+  const { user } = useAuthContext();
+
   const [image, setImage] = useState<string | null>(null);
   const [type, setType] = useState<string | null>(null);
   const [id, setId] = useState<number | null>(null);
+  const [pokemon, setPokemon] = useState<PokemonInput | {}>({});
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -14,15 +20,43 @@ const PokemonCard = ({ name, url }: Pokemon) => {
       setImage(data.sprites.front_default);
       setType(data.types[0].type.name);
       setId(data.id);
+      setPokemon({
+        userId: user?.id,
+        id: data.id,
+        name: name,
+        type: data.types[0].type.name,
+        sprites: data.sprites.front_default,
+        height: data.height,
+        weight: data.weight,
+        hp: data.stats[0].base_stat,
+        attack: data.stats[1].base_stat,
+        defense: data.stats[2].base_stat,
+        specialattack: data.stats[3].base_stat,
+        specialdefence: data.stats[4].base_stat,
+        speed: data.stats[5].base_stat,
+        //abilities: string[];
+      });
     };
     fetchPokemon();
   }, []);
 
-  const addToTeam = () => {
+  const savePokemon = async () => {
     //Will call an api to add this pokemon team, but need to check it should not alread be in team
-    alert(
-      `Provide functionality to this Button to make this pokemon ${id} a team member.`
-    );
+    if (!user) {
+      alert(`Please login to make this pokemon as a team member.`);
+      return;
+    }
+    console.log("Pokemon to Save : ", pokemon);
+    try {
+      await addToTeam(pokemon);
+      toast.success("Sucssfully added to team");
+    } catch (error: any) {
+      if (error.status === 409) {
+        toast.error("This Pokémon is already in your team ⚠️");
+      } else {
+        toast.error("Something went wrong. Please try again ❌");
+      }
+    }
   };
   return (
     <div className=" hover:-translate-y-1 hover:scale-[1.02] card h-100 w-72 items-center justify-center bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-200"

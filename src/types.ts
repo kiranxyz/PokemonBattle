@@ -5,6 +5,27 @@ declare global {
     image?: string;
   };
 
+  type PokemonInput = Pokemon & {
+    id: string;
+    userId: string;
+    sprites: string;
+    type?: string;
+    height?: number;
+    weight?: number;
+    stats?: number;
+    hp?: number;
+    attack?: number;
+    defense?: number;
+    specialattack?: number;
+    specialdefence?: number;
+    speed?: number;
+    abilities?: string[];
+  };
+
+  type Team = {
+    team: PokemonInput[];
+  };
+
   type User = {
     id: string;
     firstName: string;

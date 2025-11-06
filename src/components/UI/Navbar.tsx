@@ -17,6 +17,36 @@ const Navbar = () => {
           <img className="max-w-40" src="/public/logo.png" alt="Logo" />
         </Link>
       </div>
+      <div className="flex-2">
+        <div>
+          
+        </div>
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          {/* <li>
+            <NavLink to="/battle">Battle 1</NavLink>
+          </li> */}
+          {user && (
+            <>
+              <li>
+                <NavLink to="/battle2">Battle Ground</NavLink>
+              </li>
+              <li>
+                <NavLink to="/team">Team</NavLink>
+              </li>
+            </>
+          )}
+          {loading ? null : user ? (
+            <>
+              <li className="pointer-events-none">
+                <span className="opacity-70 cursor-default">
+                  {user.firstName
+                    ? `Hi, ${user.firstName}`
+                    : user.email.split("@")[0]}
+                </span>
+              </li>
 
       {/* Center Section: Navigation Links */}
       <div className="flex-2 flex justify-center">
