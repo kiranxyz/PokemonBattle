@@ -3,7 +3,7 @@ A full-stack Pokémon battle application allowing users to compete and track bat
 
 My Contributions
 
-Implemented API endpoints to store and retrieve Pokémon by user ID.
+Implemented API endpoints to store and retrieve Pokémon by user ID. GitHub repo: https://github.com/kiranxyz/api_service.git
 
 Developed leaderboard functionality to post and fetch winners and losers.
 
@@ -17,6 +17,7 @@ Tech Stack
 Node.js, Express, TypeScript, React
 Tools: Git, GitHub, Postman, Chrome DevTools
 Repositories: Front-end, API Service
+
 
 Screenshot of web app:
 <img width="1500" height="661" alt="Screenshot 2025-11-09 at 18 57 58" src="https://github.com/user-attachments/assets/bb4138fe-5737-47af-94c8-4c3d33676926" />
