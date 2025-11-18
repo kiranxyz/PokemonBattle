@@ -1,22 +1,48 @@
-Pokemon Battle App
-A full-stack Pokémon battle application allowing users to compete and track battle results.
 
-My Contributions
+# Pokémon Battle App
 
-Implemented API endpoints to store and retrieve Pokémon by user ID. GitHub repo: https://github.com/kiranxyz/api_service.git
+A full-stack Pokémon battle platform where users can save Pokémon, choose opponents, and track battle results.
 
-Developed leaderboard functionality to post and fetch winners and losers.
+##  Why This Project Matters
+It demonstrates API design, stateful data storage, and real front/back-end integration.
 
-Created battle endpoints to start battles, perform moves, and fetch battle states.
+## 🧩 Features
+- User authentication  
+- Save and retrieve Pokémon by user ID  
+- Battle simulator logic  
+- Persistent data  
+- Clean UI (front-end repo link if exists)
 
-Validated request inputs and handled errors to ensure robust server responses.
+## 🛠 Tech Stack
+- Node.js  
+- Express
+- TypeScript
+- Mongoose
+- React
+- Git
+- Postman
+- Chrome DevTools
+  
+## 🧑‍💻 My Contribution
+- Designed & implemented API endpoints  
+- Built data model for storing Pokémon  
+- Connected database + user routes
+- Developed leaderboard functionality to post and fetch winners and losers.
+- Created battle endpoints to start battles, perform moves, and fetch battle states.
+- Validated request inputs and handled errors to ensure robust server responses.
+- Collaborated using Git for version control and participated in code reviews.
+- Testing & debugging backend logic
+ 
 
-Collaborated using Git for version control and participated in code reviews.
+## 🚀 How to Run
 
-Tech Stack
-Node.js, Express, TypeScript, React
-Tools: Git, GitHub, Postman, Chrome DevTools
-Repositories: Front-end, API Service
+npm install
+npm run dev
+
+
+## 📚 Future Improvements 
+- More Pokémon stats  
+- Enhanced UI animations
 
 
 Screenshot of web app:
